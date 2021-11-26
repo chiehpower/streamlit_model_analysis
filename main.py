@@ -1,3 +1,10 @@
+"""
+Author: Chieh
+The reference is from https://github.com/fcakyon/streamlit-image-comparison.
+Mainly I applied this library to compare the model detecting results. 
+Then we can easily to compare two of different training conditions.
+"""
+
 import streamlit as st
 from streamlit_image_comparison import image_comparison
 import cv2
@@ -142,7 +149,7 @@ for imgname in lst_img:
                 ### Score
                 scores = i_det['score']
                 str_score = '{0:.2f}'.format(scores)
-                print(str_score)
+                # print(str_score)
                 font = cv2.FONT_HERSHEY_SIMPLEX
                 cv2.putText(det_image, str_score, (x1, y2), font, 1, [0, 0, 0], 1, cv2.LINE_AA)
     except:
